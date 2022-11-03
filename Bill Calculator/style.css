@@ -1,0 +1,88 @@
+:root {
+    --calculator-background: #010d00;
+    --people-button: #8c8377;
+    --input-background: #423f3c;
+    --text-color: #d9cdbf;
+}
+
+html {
+    font-size: 16px;
+}
+
+* {
+    font-family: "M PLUS Rounded 1c", Avenir Next, Helvetica, sans-serif;
+    color: var(--text-color);
+}
+
+::placeholder {
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: normal;
+}
+
+body {
+    margin: 0px;
+}
+
+.calculator {
+    background-color: var(--calculator-background);
+    width: 500px;
+    height: 400px;
+    margin: 50px auto;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.inputs {
+    padding: 30px;
+}
+
+.inputValor {
+    background-color: var(--input-background);
+    width: 90%;
+    display: flex;
+    align-items: center;
+    height: 30px;
+    border-radius: 20px;
+    padding-left: 10px;
+}
+
+.input {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0 0 0 5px;
+}
+
+.people {
+    width: 90%;
+    padding-left: 30px;
+    display: flex;
+    align-self: center;
+    align-items: center;
+}
+
+.numberOfPeople,
+.perPersonTotal {
+    width: 50%;
+    height: 100%;
+}
+
+.buttonSelection {
+    display: flex;
+    align-items: center;
+}
+
+.buttonSelection span {
+    font-size: 30px;
+    padding: 0 10px;
+}
+
+.btn {
+    background-color: var(--people-button);
+    border-radius: 50px;
+    width: 20px;
+    height: 20px;
+    border: none;
+}

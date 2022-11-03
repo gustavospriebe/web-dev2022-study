@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Bill Calculator</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="calculator">
+            <div class="inputs">
+                <div class="billTotalInput">
+                    <p>Bill Total</p>
+                    <span class="inputValor">
+                        $
+                        <input
+                            class="input"
+                            id="billTotal"
+                            type="text"
+                            value="billTotal"
+                            placeholder="1000"
+                            onkeyup="calculate()"
+                        />
+                    </span>
+                </div>
+                <div class="tipInput">
+                    <p>Tip</p>
+                    <span class="inputValor"
+                        >%
+                        <input
+                            class="input"
+                            id="tip"
+                            type="text"
+                            value="tip"
+                            placeholder="10"
+                            onkeyup="calculate()"
+                        />
+                    </span>
+                </div>
+            </div>
+            <div class="people">
+                <div class="numberOfPeople">
+                    <p>People</p>
+                    <div class="buttonSelection">
+                        <button class="btn" onclick="incrementPeople()">
+                            +
+                        </button>
+                        <span id="numberOfPeople">1</span>
+                        <button class="btn" onclick="decrementPeople()">
+                            -
+                        </button>
+                    </div>
+                </div>
+                <div class="perPersonTotal">
+                    <p>Total per Person</p>
+                    <h2>
+                        R$
+                        <span id="finalValor">0.00</span>
+                    </h2>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
