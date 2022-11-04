@@ -9,42 +9,38 @@ const randomHeroButton = document.querySelector("#getNewHero");
 const inputHero = document.querySelector("#inputHeroName");
 const searchHeroButton = document.querySelector("#searchHero");
 
-const randomHero = () => {
+const randomHero = async () => {
     const random = Math.floor(Math.random() * 731) + 1;
+    const url = await fetch(
+        `https://superheroapi.com/api.php/${apiKey}/${random}`
+    );
+    const response = await url.json();
 
-    fetch(`https://superheroapi.com/api.php/${apiKey}/${random}`)
-        .then((response) => response.json())
-        .then((json) => [
-            (img.src = json["image"]["url"]),
-            (nome.innerText = json.name),
-        ]);
-
+    img.src = response["image"]["url"];
+    nome.innerText = response.name;
     heroStats(random);
 };
 
-const searchHero = () => {
-    fetch(
+const searchHero = async () => {
+    const url = await fetch(
         `https://superheroapi.com/api.php/${apiKey}/search/${inputHero.value}`
-    )
-        .then((response) => response.json())
-        .then((json) => [
-            (img.src = json.results[0]["image"]["url"]),
-            (nome.innerText = json.results[0]["name"]),
-            heroStats(json.results[0]["id"]),
-        ]);
+    );
+    const response = await url.json();
+
+    img.src = response.results[0]["image"]["url"];
+    nome.innerText = response.results[0]["name"];
+    heroStats(response.results[0]["id"]);
 };
 
-const heroStats = (id) => {
-    fetch(`https://superheroapi.com/api.php/${apiKey}/${id}`)
-        .then((response) => response.json())
-        .then((json) => {
-            const powerstats = Object.keys(json.powerstats)
-                .map(
-                    (x) => `<p><strong>${x}: </strong>${json.powerstats[x]}</p>`
-                )
-                .join("");
-            power.innerHTML = powerstats;
-        });
+const heroStats = async (id) => {
+    const url = await fetch(`https://superheroapi.com/api.php/${apiKey}/${id}`);
+    const response = await url.json();
+
+    const powerstats = Object.keys(response.powerstats)
+        .map((x) => `<p><strong>${x}: </strong>${response.powerstats[x]}</p>`)
+        .join("");
+
+    power.innerHTML = powerstats;
 };
 
 randomHeroButton.addEventListener("click", randomHero);
