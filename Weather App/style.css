@@ -1,0 +1,69 @@
+* {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#inputCity{
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+#searchButton {
+    width: 80px;
+    margin: 20px 0;
+    align-self: center;
+    height: 40px;
+    font-size: 16px;
+    border-radius: 5px;
+    color: #fff;
+    background-color: rgb(44, 43, 43);
+    border: 1px solid #ccc;
+}
+
+#modal{
+    border: 1px solid #ccc;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 5px;
+    margin: 30px 0;
+}
+
+#cityName {
+    background-color: rgb(224, 224, 224);
+    width: 100%;
+    margin: 0;
+    height: 100%;
+    line-height: 60px;
+    text-align: center;
+    border: 1px solid #ccc;
+}
+
+#citySection {
+    display: flex;
+    flex-direction: column;
+}
+
+#weatherNow {
+    font-size: 30px;
+}
+
+#temperatureSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+#temperatureNow, #minTemperature, #maxTemperature {
+    margin: 5px 0;
+}
