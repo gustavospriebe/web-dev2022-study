@@ -1,0 +1,125 @@
+/* 1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity */
+
+/* - Mobile: 375px
+- Desktop: 1440px */
+
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+
+:root {
+    /* Primary */
+    --moderate-violet: hsl(263, 55%, 52%);
+    --very-dark-grayish-blue: hsl(217, 19%, 35%);
+    --very-dark-blackish-blue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+
+    /* Neutral */
+    --light-gray: hsla(0, 0%, 81%, 0.74);
+    --light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+body {
+    font-size: 13px;
+    font-family: "Barlow Semi Condensed", sans-serif;
+    margin: 0;
+    background-color: var(--light-grayish-blue);
+}
+
+.depoiment {
+    margin: 25px;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+}
+
+.header img {
+    margin-right: 20px;
+    border-radius: 50%;
+    width: 35px;
+    border: 2px solid var(--light-gray);
+}
+
+.depoiment-person > * {
+    margin: 0;
+}
+
+.quote {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.text {
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+.verified {
+    opacity: 0.5;
+}
+
+.card1 {
+    background-color: var(--moderate-violet);
+    background-image: url("/images/bg-pattern-quotation.svg");
+    background-repeat: no-repeat;
+    background-position: 85% top;
+}
+
+.card2 {
+    background-color: var(--very-dark-grayish-blue);
+}
+
+.card3,
+.card5 {
+    background-color: var(--white);
+}
+
+.card4 {
+    background-color: var(--very-dark-blackish-blue);
+}
+
+.name,
+.quote,
+.verified,
+.text {
+    color: var(--white);
+}
+
+.card3 .name,
+.card5 .name,
+.card3 .text,
+.card5 .text,
+.card3 .quote,
+.card5 .quote,
+.card5 .verified,
+.card3 .verified {
+    color: var(--very-dark-grayish-blue);
+}
+
+@media screen and (min-width: 768px) {
+    .content {
+        display: flex;
+        /* flex-direction: column; */
+        /* flex-direction: column; */
+    }
+
+    .row {
+        flex-basis: 80%;
+    }
+    .card5 {
+        flex-basis: 20%;
+    }
+
+    .firstrow,
+    .secondrow {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .depoiment {
+        margin: 15px;
+    }
+}

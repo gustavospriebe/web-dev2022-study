@@ -124,7 +124,7 @@ button:hover {
     background-color: var(--bright-yellow-darker);
 }
 
-@media (max-width: 940px) {
+@media screen and (max-width: 940px) {
     body {
         /* background-color: black; */
         height: auto;
@@ -156,23 +156,18 @@ button:hover {
         margin: 0;
     }
 
-    .header {
-        /* height: 66%; */
-    }
-
     .footer {
         display: inline-block;
     }
 }
 
-@media (max-width: 540px) {
+@media screen and (max-width: 540px) {
     div.component {
         width: 90%;
     }
 }
 
-
-@media (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
     body {
         font-size: 20px;
     }
