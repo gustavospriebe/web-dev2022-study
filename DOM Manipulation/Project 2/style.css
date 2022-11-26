@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    background-color: #dddada;
+}
+
+.open-btn {
+    position: absolute;
+    top: 70%;
+    left: 10%;
+    height: 50px;
+    width: 30%;
+    border-radius: 10px;
+    background: transparent;
+    border: solid 2px #000;
+    font-size: 1.2rem;
+    transition: 0.5s;
+}
+
+.open-btn:hover {
+    color: #fff;
+    background-color: #000;
+    cursor: pointer;
+}
+
+.modal {
+    border: solid 1px #000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* flex-direction: row; */
+    width: 150px;
+    height: 50px;
+    border-radius: 5px;
+    transform: translate(-50%, -50%);
+    position: relative;
+    top: 50%;
+    left: 50%;
+    padding: 10px 20px;
+
+    animation-name: animatemoda;
+    animation-duration: 0.4s;
+}
+
+.display {
+    display: none;
+}
+
+.close-btn {
+    font-size: 2rem;
+    cursor: pointer;
+    color: #ff0000;
+}
