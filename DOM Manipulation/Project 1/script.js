@@ -21,7 +21,7 @@ const quotes = async () => {
 
     const response = await request.json();
 
-    quoteText.innerText = response.content;
+    quoteText.innerText = `"${response.content}"`;
     quoteAuthor.innerText = response.originator.name;
 };
 
