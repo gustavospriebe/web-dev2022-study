@@ -8,5 +8,3 @@ console.log(modal);
 openButton.addEventListener("click", () => modal.classList.remove("display"));
 
 closeButton.addEventListener("click", () => modal.classList.add("display"));
-
-window.addEventListener("click", (e) => e.target === modal ? modal.classList.add('display') : '')
