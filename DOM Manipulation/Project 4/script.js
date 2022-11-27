@@ -33,7 +33,7 @@ playPause.addEventListener("click", () => {
 
 playPause.addEventListener("click", () => {
     if (playPause.innerText == "Pause") {
-        cron = setInterval(cronometer, 1);
+        cron = setInterval(cronometer, 1000);
     } else {
         clearInterval(cron);
     }

@@ -1,0 +1,103 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("coffee.jpg") no-repeat center center;
+    background-size: cover;
+}
+
+.task-container {
+    display: absolute;
+    flex-direction: column;
+    width: 60%;
+}
+
+.input-section {
+    padding: 12px;
+    border: 1px solid #ccc;
+    display: flex;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 8px 1px;
+}
+
+.task {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 10px 0;
+    box-shadow: 0 0 8px 1px;
+    background: #fff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.task p {
+    flex: 5;
+    font-size: 1.1rem;
+}
+
+.complete-task,
+.delete-task {
+    padding: 5px;
+    flex: 1;
+}
+
+.complete-task {
+    margin-right: 5px;
+    color: rgb(202, 202, 11);
+    background-color: #fff;
+    border: 1px solid rgb(202, 202, 11);
+    border-radius: 5px;
+}
+
+.complete-task:hover {
+    cursor: pointer;
+    background-color: rgb(202, 202, 11);
+    color: #fff;
+}
+
+.delete-task {
+    color: rgb(202, 11, 11);
+    background-color: #fff;
+    border: 1px solid rgb(202, 11, 11);
+    border-radius: 5px;
+}
+
+.delete-task:hover {
+    background-color: rgb(202, 11, 11);
+    color: #fff;
+    cursor: pointer;
+}
+
+.input-task {
+    flex: 5;
+    border-radius: 5px;
+    border: 1px solid #000;
+    margin-right: 5px;
+}
+
+.new-task {
+    flex: 1;
+    border-radius: 5px;
+    border: 1px solid green;
+    font-size: 1.1rem;
+    background: #fff;
+    color: green;
+}
+
+.new-task:hover {
+    cursor: pointer;
+    background: green;
+    color: #fff;
+}
+
+.line-through {
+    text-decoration: line-through;
+}
