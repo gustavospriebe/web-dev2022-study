@@ -1,0 +1,38 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #ccc;
+}
+
+.timer-modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    /* border: 1px solid #ccc; */
+    width: 50%;
+    height: 150px;
+    border-radius: 10px;
+}
+
+.timer {
+    font-size: 2rem;
+}
+
+.commands {
+    display: flex;
+}
+
+.play-pause,
+.restart {
+    padding: 10px 15px;
+    margin: 10px;
+}
