@@ -44,4 +44,5 @@ restart.addEventListener("click", () => {
     hour.innerText = "00";
     minute.innerText = "00";
     second.innerText = "00";
+    playPause.innerText = "Start"
 });

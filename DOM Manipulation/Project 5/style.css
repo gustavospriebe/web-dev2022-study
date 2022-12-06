@@ -96,6 +96,7 @@ body {
     cursor: pointer;
     background: green;
     color: #fff;
+    transition: .5s;
 }
 
 .line-through {

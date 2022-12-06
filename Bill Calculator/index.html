@@ -7,7 +7,7 @@
         <title>Bill Calculator</title>
         <link rel="stylesheet" href="style.css" />
     </head>
-    <body>
+    <body onload="calculate()">
         <div class="calculator">
             <div class="inputs">
                 <div class="billTotalInput">
@@ -18,7 +18,7 @@
                             class="input"
                             id="billTotal"
                             type="text"
-                            value="billTotal"
+                            value="1000"
                             placeholder="1000"
                             onkeyup="calculate()"
                         />
@@ -32,7 +32,7 @@
                             class="input"
                             id="tip"
                             type="text"
-                            value="tip"
+                            value="10"
                             placeholder="10"
                             onkeyup="calculate()"
                         />

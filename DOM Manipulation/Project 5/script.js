@@ -40,5 +40,3 @@ function createNewTask() {
 }
 
 newTask.addEventListener("click", createNewTask);
-
-// complete usar toggle com classe riscando task no meio

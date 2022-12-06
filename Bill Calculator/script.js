@@ -31,9 +31,7 @@ function incrementPeople() {
 function decrementPeople() {
     let peopleValor = Number(numberOfPeople.innerText);
 
-    if (peopleValor > 1) {
-        peopleValor--;
-    }
+    peopleValor > 1 && peopleValor--;
 
     numberOfPeople.innerText = peopleValor;
 

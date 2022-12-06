@@ -1,8 +1,6 @@
 const filterElement = document.querySelector("#filter");
 const cards = document.querySelectorAll(".cards li");
 
-filterElement.addEventListener("input", filterCards);
-
 function filterCards() {
     if (filterElement.value != "") {
         cards.forEach((card) => {
@@ -17,3 +15,5 @@ function filterCards() {
         cards.forEach((card) => (card.style.display = "block"));
     }
 }
+
+filterElement.addEventListener("input", filterCards);
