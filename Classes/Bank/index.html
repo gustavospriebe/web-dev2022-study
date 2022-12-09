@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="new-account">
+            <button class="create-new-account">
+                Touch here to create a new account
+            </button>
+        </div>
+        <div class="account-info">
+            <div class="account">
+                <!-- select account --> 
+                <p>Account ID</p>
+                <input type="number" name="account-id" id="account-id" />
+                <button type="submit">Select</button>
+            </div>
+            <div class="deposit">
+                <p>Deposit</p>
+                <input type="number" name="deposit-valor" id="deposit-valor" />
+                <button type="submit">Select</button>
+            </div>
+            <div class="withdraw">
+                <p>Withdraw</p>
+                <input type="number" name="withdraw-valor" id="withdraw-valor" />
+                <button type="submit">Select</button>
+            </div>
+            <div class="balance">
+                <p class="display-account-id"></p>
+                <p class="display-balance"></p>
+            </div>
+        </div>
+
+        <script src="bank.js"></script>
+    </body>
+</html>
