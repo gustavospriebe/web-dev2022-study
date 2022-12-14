@@ -46,6 +46,8 @@ class Game {
     declareWinner(p1, p2) {
         this.isOver = true;
 
+        document.querySelector("#victory").play();
+
         const result = p1 > p2 ? `p1 Wins` : `p2 Wins`;
 
         resultDiv.innerText = result;
@@ -63,12 +65,16 @@ class Game {
     }
 
     play(p1, p2) {
-
-
+        while (!this.isOver) {
+            p1.strike(player1, player2);
+            p2.strike(player2, player1);
+            p1.heal(player1);
+            p2.heal(player2);
+        }
     }
 }
 
-function updateGame(player1, player2, gameState) {
+function updateGame(player1, player2) {
     p1NameDiv.innerText = player1.name;
     p1HealthDiv.innerText = player1.health;
     p2NameDiv.innerText = player2.name;
