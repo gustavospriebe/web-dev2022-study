@@ -36,7 +36,6 @@ class Bank {
         this.balance < valor
             ? console.log(`Can't withdraw more than you have.`)
             : (this.balance -= valor);
-
         showAccountDetails();
     }
 }
@@ -62,7 +61,7 @@ function showAccountDetails() {
 
     if (accountsList.some((x) => x.bankID === value)) {
         displayID.innerText = value;
-        displayBalance.innerText = accountsList[value - 1].balance;
+        displayBalance.innerText = `$ ${accountsList[value - 1].balance}`;
     }
 }
 
