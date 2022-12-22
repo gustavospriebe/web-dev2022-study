@@ -1,0 +1,137 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+* {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #23252c;
+    height: 100vh;
+}
+
+.App {
+    padding-block: 45px;
+}
+
+.card {
+    width: 320px;
+    height: 780px;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: center; */
+}
+
+.photo {
+    height: 320px;
+    margin: 0;
+    background-image: url("./images/photo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.main {
+    height: 400px;
+    background-color: #1a1b21;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  font-size: 25px;
+  font-weight: 700;
+  color: #fff;
+  margin: 20px 0 6px 0;
+}
+
+.job-title {
+  font-size: 14px;
+  color: #F3BF99;
+  margin: 0 0 9px 0;
+}
+
+.website {
+  font-size: 12px;
+  color: #F5F5F5;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+  /* align-items: center; */
+}
+
+.buttons > .linkedin, .buttons > .email {
+  /* padding: 8px 25px; */
+  width: 115px;
+  height: 35px;
+  border-radius: 6px;
+  font-size: 14px;
+  margin: 0 9px;
+  border: none;
+  cursor: pointer;
+}
+
+.linkedin {
+  background-color: #5093E2;
+  color: #fff;
+}
+
+.linkedin:hover {
+  background-color: #437cbd;
+}
+
+.email > i, .linkedin > i {
+  padding-right: 8px;
+}
+
+.content {
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 1.5;
+    padding: 0 35px;
+    color: #DCDCDC;
+    margin-top: 30px;
+  }
+  
+  .content > .about > h4, .content > .interest > h4{
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.interest {
+  margin-top:25px;
+}
+
+
+.footer {
+    height: 60px;
+    /* position: fixed; */
+    /* bottom: 0; */
+    background-color: #161619;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.footer > img {
+  width: 25px;
+  height: 25px;
+  margin: 0 12.5px;
+}
+
+.footer > img:hover {
+  cursor: pointer;
+}
