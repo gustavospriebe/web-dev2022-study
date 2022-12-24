@@ -30,7 +30,7 @@ body {
 .photo {
     height: 320px;
     margin: 0;
-    background-image: url("./images/photo.png");
+    background-image: url("./images/photo.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -41,58 +41,60 @@ body {
 }
 
 .title {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .name {
-  font-size: 25px;
-  font-weight: 700;
-  color: #fff;
-  margin: 20px 0 6px 0;
+    font-size: 25px;
+    font-weight: 700;
+    color: #fff;
+    margin: 20px 0 6px 0;
 }
 
 .job-title {
-  font-size: 14px;
-  color: #F3BF99;
-  margin: 0 0 9px 0;
+    font-size: 14px;
+    color: #f3bf99;
+    margin: 0 0 9px 0;
 }
 
 .website {
-  font-size: 12px;
-  color: #F5F5F5;
+    font-size: 12px;
+    color: #f5f5f5;
 }
 
 .buttons {
-  display: flex;
-  justify-content: center;
-  margin-top: 15px;
-  /* align-items: center; */
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    /* align-items: center; */
 }
 
-.buttons > .linkedin, .buttons > .email {
-  /* padding: 8px 25px; */
-  width: 115px;
-  height: 35px;
-  border-radius: 6px;
-  font-size: 14px;
-  margin: 0 9px;
-  border: none;
-  cursor: pointer;
+.buttons > .linkedin,
+.buttons > .email {
+    /* padding: 8px 25px; */
+    width: 115px;
+    height: 35px;
+    border-radius: 6px;
+    font-size: 14px;
+    margin: 0 9px;
+    border: none;
+    cursor: pointer;
 }
 
 .linkedin {
-  background-color: #5093E2;
-  color: #fff;
+    background-color: #5093e2;
+    color: #fff;
 }
 
 .linkedin:hover {
-  background-color: #437cbd;
+    background-color: #437cbd;
 }
 
-.email > i, .linkedin > i {
-  padding-right: 8px;
+.email > i,
+.linkedin > i {
+    padding-right: 8px;
 }
 
 .content {
@@ -100,19 +102,19 @@ body {
     font-size: 11px;
     line-height: 1.5;
     padding: 0 35px;
-    color: #DCDCDC;
+    color: #dcdcdc;
     margin-top: 30px;
-  }
-  
-  .content > .about > h4, .content > .interest > h4{
+}
+
+.content > .about > h4,
+.content > .interest > h4 {
     font-weight: 700;
     font-size: 16px;
 }
 
 .interest {
-  margin-top:25px;
+    margin-top: 25px;
 }
-
 
 .footer {
     height: 60px;
@@ -124,14 +126,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
 .footer > img {
-  width: 25px;
-  height: 25px;
-  margin: 0 12.5px;
+    width: 25px;
+    height: 25px;
+    margin: 0 12.5px;
 }
 
 .footer > img:hover {
-  cursor: pointer;
+    cursor: pointer;
 }

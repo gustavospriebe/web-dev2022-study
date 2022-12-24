@@ -2,9 +2,9 @@ export default function Main() {
     return (
         <div className="main">
             <div className="title">
-                <p className="name">Laura Smith</p>
-                <p className="job-title">Frontend Developer</p>
-                <p className="website">laurasmith.website</p>
+                <p className="name">Gustavo Priebe</p>
+                <p className="job-title">Fullstack Developer</p>
+                <p className="website">github.com/gustavospriebe</p>
             </div>
             <div className="buttons">
                 <button type="button" className="email">
@@ -12,8 +12,8 @@ export default function Main() {
                     Email
                 </button>
                 <button type="button" className="linkedin">
-                    <i className="fa fa-linkedin" aria-hidden="true"></i>
-                    LinkedIn
+                        <i className="fa fa-linkedin" aria-hidden="true"></i>
+                        LinkedIn
                 </button>
             </div>
             <div className="content">
