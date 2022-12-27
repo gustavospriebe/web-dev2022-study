@@ -63,9 +63,9 @@ body {
 }
 
 .card {
-    width: 200px;
     font-size: 12px;
-    margin: 50px 0 30px 8%;
+    margin: 50px 0 30px 5%;
+    position: relative;
 }
 
 .card--stats {
@@ -82,9 +82,27 @@ body {
 }
 
 .card--photo {
-    width: 100%;
+    width: 175px;
 }
 
 .card--title {
     font-weight: 300;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+}
+
+.card--badge {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    background-color: white;
+    padding: 5px 7px;
+    border-radius: 2px;
+    font-weight: bold;
 }

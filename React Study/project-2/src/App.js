@@ -1,14 +1,26 @@
 import "./App.css";
 import Header from "./componets/Header";
 import Main from "./componets/Main";
-import Cards from "./componets/Cards";
+import Card from "./componets/Cards";
+import data from "./data";
+
+// console.log(data);
 
 function App() {
+    const card = data.map((item) => {
+        return (
+            <Card
+                key={item.id}
+                item={item}
+            />
+        );
+    });
+
     return (
         <div className="App">
             <Header />
             <Main />
-            <Cards />
+            <div className="cards">{card}</div>
         </div>
     );
 }
