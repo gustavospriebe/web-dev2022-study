@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Inter, sans-serif;
+    color: #2b283a;
+}
+
+.header {
+    background-color: #f55a5a;
+    height: 55px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header > img {
+    margin-right: 5px;
+}
+
+.header > span {
+    letter-spacing: -0.075em;
+    color: #fff;
+    font-size: 14px;
+}
+
+.journal {
+    display: flex;
+    margin: 35px 7.5%;
+}
+
+.main > hr {
+  margin: 0 auto;
+  width: 90%;
+  opacity: 12%;
+}
+
+.journal > img {
+    width: 125px;
+    height: 170px;
+    border-radius: 5px;
+    object-fit: cover;
+    margin-right: 20px;
+}
+
+.journal--location {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+}
+
+.journal--country {
+    text-transform: uppercase;
+    letter-spacing: 0.17rem;
+    color: #2b283a;
+    margin: 0 12px 0 4px;
+}
+
+.journal--content {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.journal--place {
+    margin: 8px 0 15px 0;
+}
+
+.journal--location--link {
+    color: #918e9b;
+}
+
+.journal--date {
+    font-size: 10px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.journal--description {
+    font-size: 11px;
+    width: 95%;
+    line-height: 15px;
+}
+
+/* margin: 0 15%; */
