@@ -5,7 +5,7 @@ export default function Journal({data}) {
         <div className="main">
             <div className="journal">
                 <img
-                    alt="oi"
+                    alt="location"
                     src={data.img}
                 ></img>
                 <div className="journal--content">
@@ -20,7 +20,6 @@ export default function Journal({data}) {
                         >
                             View on Google Maps
                         </a>
-                        {/* <a href={`https://www.google.com.br/maps/place/${maps}`}></a> */}
                     </div>
                     <h2 className="journal--place">{data.place}</h2>
                     <p className="journal--date">{data.initialDate} - {data.finalDate}</p>
