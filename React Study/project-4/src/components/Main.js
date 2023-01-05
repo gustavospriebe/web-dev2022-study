@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import data from "../data";
 
 export default function Main() {
     const [meme, setMeme] = useState("");
+
+    useEffect(() => setMeme(data.data.memes[10].url), [])
 
     const memeURL = () => {
         const randomNumber = Math.floor(Math.random() * data.data.memes.length);
@@ -29,7 +31,7 @@ export default function Main() {
             <button onClick={memeURL} type="button" className="button">
                 Get a new meme image 🖼
             </button>
-            <img className="image" src={meme} alt='meme'></img>
+            <img className="image" src={meme} alt="meme"></img>
         </div>
     );
 }
