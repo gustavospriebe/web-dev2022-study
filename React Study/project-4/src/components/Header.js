@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <div className="header">
             <img src={logo} alt="logo"></img>
-            <p>React Course - Project 3</p>
+            <p>React Course - Project 4</p>
         </div>
     )
 }
