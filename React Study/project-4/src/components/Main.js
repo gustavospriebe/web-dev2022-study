@@ -1,18 +1,27 @@
-import React, { useState } from "react";
-import data from "../data";
+import React, { useEffect, useState } from "react";
 
 export default function Main() {
-    const randomNumber = Math.floor(Math.random() * data.data.memes.length);
-    const randomMeme = data.data.memes[randomNumber].url;
-
     const initialState = {
-        meme: randomMeme,
+        allMemes: "",
         topText: "",
         bottomText: "",
         rotate: false,
+        meme: "https://i.imgflip.com/26am.jpg",
     };
 
     const [values, setValues] = useState(initialState);
+    const randomNumber = Math.floor(Math.random() * values.allMemes.length);
+
+    useEffect(() => {
+        fetch(`https://api.imgflip.com/get_memes`)
+            .then((res) => res.json())
+            .then((data) =>
+                setValues((prevState) => ({
+                    ...prevState,
+                    allMemes: data.data.memes,
+                }))
+            );
+    }, []);
 
     function handleChange(event) {
         const { name, value, type, checked } = event.target;
@@ -28,7 +37,7 @@ export default function Main() {
 
         setValues((prevState) => ({
             ...prevState,
-            meme: randomMeme,
+            meme: values.allMemes[randomNumber].url,
         }));
     }
 
