@@ -1,35 +1,46 @@
 import express from "express";
-
-let articlesInfo = [
-    {
-        name: "learn-react",
-        upvotes: 0,
-        comments: [],
-    },
-    {
-        name: "learn-node",
-        upvote: 0,
-        comments: [],
-    },
-    {
-        name: "mongodb",
-        upvote: 0,
-        comments: [],
-    },
-];
+import { MongoClient } from "mongodb";
 
 const app = express();
 app.use(express.json());
 
-app.put("/api/articles/:name/upvote", (req, res) => {
+app.get("/api/articles/:name", async (req, res) => {
     const { name } = req.params;
-    const article = articlesInfo.find((a) => a.name === name);
+
+    const client = new MongoClient("mongodb://127.0.0.1:27017");
+    await client.connect();
+
+    const db = client.db("react-blog-db");
+
+    const article = await db.collection("articles").findOne({ name });
 
     if (article) {
-        article.upvotes += 1;
-        res.send(`The ${name} article has ${article.upvotes} upvotes!`);
+        res.json(article);
     } else {
-        res.send("That article doesn't exists.");
+        res.sendStatus(404);
+    }
+});
+
+app.put("/api/articles/:name/upvote", async (req, res) => {
+    const { name } = req.params;
+
+    const client = new MongoClient("mongodb://127.0.0.1:27017");
+    await client.connect();
+
+    const db = client.db("react-blog-db");
+    await db.collection("articles").updateOne(
+        { name },
+        {
+            $inc: { upvote: 1 },
+        }
+    );
+
+    const article = await db.collection("articles").findOne({ name });
+
+    if (article) {
+        res.json(article);
+    } else {
+        res.sendStatus(404);
     }
 });
 
@@ -49,7 +60,7 @@ app.listen(8000, () => {
     console.log("Server is listenning on port 8000");
 });
 
-// Testes
+// Estudo
 // app.post("/hello", (req, res) => {
 //     console.log(req.body);
 //     res.send(`Hello ${req.body.name}!`);
