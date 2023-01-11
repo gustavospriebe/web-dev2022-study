@@ -1,9 +1,16 @@
 import express from "express";
 
 const app = express();
+app.use(express.json());
 
-app.get("/hello", (req, res) => {
-    res.send("Hello!");
+app.post("/hello", (req, res) => {
+    console.log(req.body);
+    res.send(`Hello ${req.body.name}!`);
+});
+
+app.post("/hello/:name", (req, res) => {
+    const { name } = req.params;
+    res.send(`Hello ${name.toUpperCase()}!`);
 });
 
 app.listen(8000, () => {
