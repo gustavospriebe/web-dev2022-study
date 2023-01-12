@@ -104,9 +104,13 @@ textarea {
     width: 320px;
 }
 
-#upvotes-section button,
+.upvotes-section {
+    display: flex;
+    flex-direction: row;
+}
+
+.upvotes-section button,
 p {
-    display: inline-block;
     margin-right: 16px;
 }
 

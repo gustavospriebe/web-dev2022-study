@@ -1,5 +1,5 @@
 import express from "express";
-import { db, connect } from "./db.js";
+import { connect, db } from "./db.js";
 
 const app = express();
 app.use(express.json());
@@ -48,18 +48,18 @@ app.post("/api/articles/:name/comments", async (req, res) => {
 
     const article = await db.collection("articles").findOne({ name });
     if (article) {
-        res.send(article);
+        res.json(article);
     } else {
         res.sendStatus(404);
     }
 });
 
 connect(() => {
+    console.log("Connection established");
     app.listen(8000, () => {
         console.log("Server is listenning on port 8000");
     });
 });
-
 
 // Estudo
 // app.post("/hello", (req, res) => {
