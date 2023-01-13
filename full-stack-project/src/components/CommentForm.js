@@ -1,5 +1,5 @@
-import { useState } from "react";
 import axios from "axios";
+import { useState } from "react";
 
 export default function CommentForm(props) {
     const initialState = {
@@ -27,6 +27,7 @@ export default function CommentForm(props) {
 
         const res = req.data;
 
+        // This function was declared on father's page and passed through props.
         props.updateArticle(res);
 
         setValues(initialState);
