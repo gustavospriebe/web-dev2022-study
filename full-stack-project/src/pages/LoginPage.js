@@ -1,4 +1,6 @@
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function LoginPage() {
     const initialState = {
@@ -18,12 +20,28 @@ export default function LoginPage() {
         }));
     };
 
-    console.log(values);
+    // Go to another page
+    const navigate = useNavigate();
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+    const handleSubmit = async (e) => {
+        
+        try {
+            e.preventDefault();
+            await signInWithEmailAndPassword(
+                getAuth(),
+                values.email,
+                values.password
+                );
+                
+                navigate("/articles");
+        } catch (error) {
+            setValues((prevState) => ({
+                ...prevState,
+                error: error,
+            }));
 
-        console.log(values);
+            alert(error);
+        }
     };
 
     return (
@@ -50,6 +68,7 @@ export default function LoginPage() {
                 </label>
                 <button>Login</button>
             </form>
+            <Link to="/register">Click here to create a new account</Link>
         </>
     );
 }
