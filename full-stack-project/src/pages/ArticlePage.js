@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import CommentForm from "../components/CommentForm";
 import CommentsList from "../components/CommentsList";
+import UpVote from "../components/UpVote";
+import useUser from "../hooks/useUser";
 import articles from "./article-content";
 import NotFoundPage from "./NotFoundPage";
-import useUser from "../hooks/useUser";
 
 export default function ArticlePage() {
     const initialState = {
@@ -31,12 +32,6 @@ export default function ArticlePage() {
 
     const article = articles.find((article) => article.name === articleId);
 
-    const upVoteButton = async () => {
-        const request = await axios.put(`/api/articles/${articleId}/upvote`);
-        const response = request.data;
-        setValues(response);
-    };
-
     if (!article) {
         return <NotFoundPage />;
     }
@@ -46,7 +41,10 @@ export default function ArticlePage() {
             <h1>{article.title}</h1>
             <div className="upvotes-section">
                 {user ? (
-                    <button onClick={upVoteButton}>Upvote</button>
+                    <UpVote
+                        articleId={articleId}
+                        updateArticle={(articleInfo) => setValues(articleInfo)}
+                    />
                 ) : (
                     <button onClick={login}>Log in to Upvote</button>
                 )}

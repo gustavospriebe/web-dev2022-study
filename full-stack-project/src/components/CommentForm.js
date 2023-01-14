@@ -30,6 +30,7 @@ export default function CommentForm(props) {
         // This function was declared on father's page and passed through props.
         props.updateArticle(res);
 
+        // After send the information to back end, return to initial state
         setValues(initialState);
     };
 

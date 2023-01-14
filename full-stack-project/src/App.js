@@ -16,8 +16,12 @@ function App() {
                 <NavBar />
                 <div className="page-body">
                     <Routes>
-                        <Route path="/" element={<HomePage />} />
-                        <Route path="/about" element={<AboutPage />} />
+                        <Route 
+                        path="/" 
+                        element={<HomePage />} />
+                        <Route 
+                        path="/about" 
+                        element={<AboutPage />} />
                         <Route
                             path="/articles"
                             element={<ArticlesListPage />}
