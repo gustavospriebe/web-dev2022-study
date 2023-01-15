@@ -1,7 +1,12 @@
 import express from "express";
-import admin from "firebase-admin";
-import fs from "fs";
+// import admin from "firebase-admin";
+import path from "path";
+// import fs from "fs";
+import "dotenv/config";
+import { fileURLToPath } from "url";
 import { connect, db } from "./db.js";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 // const credentials = JSON.parse(fs.readFileSync("../credentials.json"));
 // admin.initializeApp({
@@ -10,6 +15,11 @@ import { connect, db } from "./db.js";
 
 const app = express();
 app.use(express.json());
+app.use(express.static(path.join(__dirname, "../build")));
+
+app.get(/^(?!\/api).+/, (req, res) => {
+    res.sendFile(path.join(__dirname, "../build/index.html"));
+});
 
 // app.use(async (req, res, next) => {
 //     const { authtoken } = req.headers;
@@ -78,10 +88,12 @@ app.post("/api/articles/:name/comments", async (req, res) => {
     }
 });
 
+const PORT = process.env.PORT || 8000;
+
 connect(() => {
     console.log("Connection established");
-    app.listen(8000, () => {
-        console.log("Server is listenning on port 8000");
+    app.listen(PORT, () => {
+        console.log("Server is listenning on port " + PORT);
     });
 });
 
