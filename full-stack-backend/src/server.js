@@ -1,15 +1,39 @@
 import express from "express";
+import admin from "firebase-admin";
+import fs from "fs";
 import { connect, db } from "./db.js";
+
+const credentials = JSON.parse(fs.readFileSync("../credentials.json"));
+admin.initializeApp({
+    credential: admin.credential.cert(credentials),
+});
 
 const app = express();
 app.use(express.json());
 
+app.use(async (req, res, next) => {
+    const { authtoken } = req.headers;
+
+    if (authtoken) {
+        try {
+            req.user = await admin.auth().verifyIdToken(authtoken);
+        } catch (err) {
+            res.sendStatus(404);
+        }
+    }
+
+    next();
+});
+
 app.get("/api/articles/:name", async (req, res) => {
     const { name } = req.params;
+    const { uid } = req.user;
 
     const article = await db.collection("articles").findOne({ name });
 
     if (article) {
+        const upvoteIDs = article.upvoteIDs || [];
+        article.canUpvote = uid && !upvoteIDs.include(uid);
         res.json(article);
     } else {
         res.sendStatus(404);
