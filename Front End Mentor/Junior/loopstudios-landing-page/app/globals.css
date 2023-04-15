@@ -1,27 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
+@layer base {
+    h2 {
+        @apply mt-2 text-5xl;
+    }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
+    .hero {
+        /* height: 100vh; */
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+        /* background-image: url("../public/images/desktop/image-hero.jpg"); */
+
+        /* width: 100vw; */
+
+        /* background-color: black; */
+    }
+
+    .links ul li {
+        font-family: "Alata";
+
+        @apply text-white xl:text-base text-xs;
+    }
+
+    .hero-text {
+        font-family: "Josefin Sans";
+
+        @apply text-white text-4xl lg:text-6xl;
+    }
 }
