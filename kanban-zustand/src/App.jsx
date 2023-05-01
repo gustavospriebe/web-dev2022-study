@@ -4,9 +4,9 @@ import Column from "./components/Column";
 function App() {
     return (
         <div className={styles.app}>
-            <Column state="PLANNED" />
-            <Column state="ONGOING" />
-            <Column state="DONE" />
+            <Column status="PLANNED" />
+            <Column status="ONGOING" />
+            <Column status="DONE" />
         </div>
     );
 }
