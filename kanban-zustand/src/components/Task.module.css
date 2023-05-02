@@ -8,6 +8,7 @@
     flex-direction: column;
     justify-content: space-between;
     margin-top: 0.5rem;
+    cursor: move;
 }
 
 .bottomWrapper {
@@ -31,4 +32,8 @@
 
 .DONE {
     background: var(--COLOR-DONE);
+}
+
+.trash {
+    cursor: pointer;
 }

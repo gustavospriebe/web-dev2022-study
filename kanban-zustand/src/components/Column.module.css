@@ -7,6 +7,7 @@
     margin: 0 0.5rem;
     border-radius: 4px;
     padding: 0.5rem;
+    border: dashed transparent 4px;
 }
 
 .titleWrapper {
@@ -46,4 +47,8 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+.drop {
+    border: dashed white 4px;
 }
